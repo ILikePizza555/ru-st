@@ -5,8 +5,8 @@
 } }:
 
 pkgs.mkShell {
-  buildInputs = [
-    (pkgs.rust-bin.stable.latest.default.override {
+  buildInputs = with pkgs; [
+    (rust-bin.stable.latest.default.override {
       extensions = ["rust-src"];
     })
   ];
